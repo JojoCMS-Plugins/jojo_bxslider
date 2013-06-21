@@ -22,8 +22,8 @@ $(document).ready(function(){ldelim}
         buildPager: function(slideIndex){ldelim}
           switch (slideIndex){ldelim}
             {foreach from=$slides key=k item=s}case {$k}:
-              return {if $slideshow.pagerimages}'<a href="{if $s.imagelink}{$s.imagelink}{/if}"><img src="{$SITEURL}/images/{$s.thumbimagesize}/{if $s.thumbimage}slides/{$s.thumbimage}{else}{$s.image}{/if}" /><span>{if $s.titles && $s.title}{$s.title}{/if}</span></a>'{else}
-              '<a href="{if $s.imagelink}{$s.imagelink}{/if}" class="pager-link pager-{$k+1}"><span>{if $s.titles && $s.title}{$s.title}{else}{$k+1}{/if}</span></a>'{/if};
+              return {if $slideshow.pagerimages}'<img src="{$SITEURL}/images/{$s.thumbimagesize}/{if $s.thumbimage}slides/{$s.thumbimage}{else}{$s.image}{/if}" /><span>{if $s.titles && $s.title}{$s.title}{/if}</span>'{else}
+              '<span>{if $s.titles && $s.title}{$s.title}{else}{$k+1}{/if}</span>'{/if};
             {/foreach}
           {rdelim}
         {rdelim}
